@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+#root {
+    width: 100%;
+}
+
+.optimize-animation {
+    transition: transform 0.2s ease-out, opacity 0.3s ease-out;
+    will-change: transform, opacity;
+}
+
+.optimize-gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .optimize-animation {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* In your CSS file */
+.review-enter {
+    opacity: 0;
+    transform: translateY(10px);
+}
+.review-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+}
+
+/* For the main dashboard content */
+.currency-dashboard {
+    z-index: 10;
+}
+
+/* For the loading overlay */
+.loading-overlay {
+    z-index: 40;
+}
+
+/* For the printable table modal */
+.printable-table-modal {
+    z-index: 50;
+}
+
+/* For error messages */
+.error-message {
+    z-index: 60;
+}
+
