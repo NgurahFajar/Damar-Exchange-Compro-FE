@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Kalau file atau folder-nya ada, layani biasa
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Selain itu, selalu arahkan ke index.html
+RewriteRule ^ index.html [L]

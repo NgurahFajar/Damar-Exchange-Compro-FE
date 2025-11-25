@@ -27,5 +27,5 @@ Gunakan .env.testing saat development
 
 VITE_APP_NAME="Damar Exchange"
 VITE_API_URL="http://127.0.0.1:8000/backend/public"
-VITE_STORAGE_URL="http://127.0.0.1:8000/backend/storage"
+VITE_STORAGE_URL="http://127.0.0.1:8000/backend/storage/public"
 VITE_API_TIMEOUT=30000
