@@ -1,9 +1,14 @@
 RewriteEngine On
 
-# Kalau file atau folder-nya ada, layani biasa
+# Redirect www → non-www (WAJIB DI ATAS)
+RewriteCond %{HTTP_HOST} ^www\.damarexchange\.online$ [NC]
+RewriteRule ^(.*)$ https://damarexchange.online/$1 [L,R=301]
+
+# Kalau file atau folder ada, layani seperti biasa
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Selain itu, selalu arahkan ke index.html
+# Selain itu, arahkan ke index.html (SPA routing)
 RewriteRule ^ index.html [L]
+
